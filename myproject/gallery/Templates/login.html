@@ -1,0 +1,46 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Login Form</title>
+<!-- Custom Theme files -->
+{% load static %}
+<link href="{% static 'login/css/style.css'%}" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="keywords" content="Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<!--Google Fonts-->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<!--Google Fonts-->
+</head>
+<body>
+<!--header start here-->
+<h2> Login form</h2>
+{% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+			<div class="login-top">
+				<h1>User login</h1>
+				<form  method="post" enctype='multipart/form-data'>
+                    	{% csrf_token %}
+					<!-- {{form.username.label_tag}} -->
+					{{form.username}}
+					{{form.password1}} 
+				<label class="checkbox"><input type="checkbox" name="checkbox" checked="checked"><i> </i> Remember Me</label>
+				
+				<!-- <p><a href="#"> Forget Password </a></p> -->
+				<div class="clear"> </div>
+				<div class="log-bwn">
+					<input type="submit" id="abc" value="Login">
+				</div>
+				<h4>Don’t have an account?  <a href="{% url 'signup' %}"> Register now </a> </h4>
+			</div>
+			<div class="copyright">
+			</form>
+				<!-- <p>Template by <a href="http://w3layouts.com/"> W3layouts </a></p> -->
+			</div>
+<!--header start here-->
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>User signup</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#myModal").modal('show');
+  });
+</script>
+<style>
+  
+   .modal-header, h4, .close {
+    background-color: #5cb85c;
+    color:white !important;
+    text-align: center;
+    font-size: 30px;
+  }
+  .form-control {
+  background-color: #4CAF50;
+  color: white;
+  /*padding: 14px 20px;*/
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  /*font-size: 17px; */
+  display: inline-block;
+  max-width: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  }
+  .form-control:hover {
+     background-color: #45a049;
+  }
+  input[type='text'],input[type='password'],input[type='email'],
+  input[type='number'], select, textarea ,input[type='date']{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+textarea {
+  height: 200px;
+}
+center {
+
+  margin-top: 100px;
+}
+</style>
+</head>
+<body>
+  <center>
+  <a href="{% url 'index' %}" class="btn btn-default" role="button">Return to login page</a><br>
+  <a href="{% url 'signup' %}" class="btn btn-default" role="button">Relaod Signuppage</a>
+  </center>
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+             <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" style="padding:35px 50px;">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4><span class="glyphicon glyphicon-lock"></span> SIGNUP</h4>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+          <form method = 'POST' enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
+             {{form1.username}}
+            </div>
+            <div class="form-group">
+              <label for="psw"><span class="glyphicon glyphicon-user"></span> First name</label>
+             {{form1.first_name}}
+            </div>
+
+            <div class="form-group">
+              <label for="psw"><span class="glyphicon glyphicon-user"></span> Last name</label>
+             {{form1.last_name}}
+            </div>
+
+              <div class="form-group">
+              <label for="psw"><span class="glyphicon glyphicon-envelope"></span> Email</label>
+             {{form1.email}}
+            </div>
+
+            <div class="form-group">
+              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+             {{form1.password1}}
+            </div>
+
+            <div class="form-group">
+              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span>Confirm Password</label>
+             {{form1.password2}}
+            </div>
+
+            <!-- <div class="form-group">
+              <label for="psw"><span class="glyphicon glyphicon-map-marker"></span> Address</label>
+             {{form2.p_address}}
+            </div> -->
+
+            <div class="form-group">
+              <label for="psw"><span class="glyphicon glyphicon-user"></span>Gender</label>
+             {{form2.gender}}
+            </div>
+
+            <div class="form-group">
+              <label for="psw"><span class="glyphicon glyphicon-star"></span> DOB</label>
+             {{form2.dob}}
+            </div>
+
+            <div class="form-group">
+              <label for="psw"><span class="glyphicon glyphicon-phone-alt"></span> Contact Number</label>
+             {{form2.phoneno}}
+            </div>
+
+            <!-- <div class="form-group">
+              <label for="psw"><span class="glyphicon glyphicon-list-alt"></span> last Date Of Admission</label>
+             {{form2.p_lda}}
+            </div> -->
+
+          
+
+         
+           <!--  <div class="checkbox">
+              <label><input type="checkbox" value="" checked>Remember me</label>
+               </div > -->
+                            <input type="submit" class="form-control" value="REGISTER">
+                        </div>
+
+            <!-- </div> -->
+            <!--  <a href='{% url 'index' %}'> <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button></a> -->
+          </form>
+        </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>                            
